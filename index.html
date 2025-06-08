@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainwave Oasis Counseling - Mental Health & Wellness Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4a90e2;
+        }
+        
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .logo a {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        
+        .social-links a {
+            margin-left: 15px;
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #4a90e2;
+        }
+        
+        .cta-btn {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background-color: #3a7bc8;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(Home\ Page.jpg) no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            border-radius: 48px;    /* More pronounced rounding on all edges */
+            overflow: hidden;
+            margin: 40px 0;         /* Optional: adds space above and below the hero */
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3a7bc8;
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: #333;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            color: #4a90e2;
+        }
+        
+        /* Therapists Section */
+        .therapists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .therapist-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .therapist-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .therapist-info {
+            padding: 20px;
+        }
+        
+        .therapist-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .therapist-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .resource-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .resource-content {
+            padding: 20px;
+        }
+        
+        .resource-content h3 {
+            margin-bottom: 10px;
+            color: #4a90e2;
+        }
+        
+        /* Partners Section */
+        .partners {
+            background-color: #f0f4f8;
+        }
+        
+        .partners .container {
+            border-radius: 32px;
+            overflow: hidden;
+            background: #f0f4f8;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 40px 0;
+        }
+        
+        .partners-slider {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .partners-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            width: calc(200px * 14);
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-200px * 7)) }
+        }
+        
+        .partner-logo {
+            height: 100px;
+            width: 200px;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .partner-logo img {
+            max-height: 80px;
+            max-width: 160px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .partner-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Testimonials Section */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            display: none;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 80px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: #4a90e2;
+            opacity: 0.2;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: #4a90e2;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: #4a90e2;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            background: white;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            margin-bottom: 20px;
+            color: #4a90e2;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-detail i {
+            margin-right: 15px;
+            color: #4a90e2;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: #4a90e2;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .logo {
+                position: static;
+                transform: none;
+                margin: 0 auto;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+            }
+            
+            .social-links {
+                margin-left: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+        }
+        
+        /* How it Works Section */
+        .how-it-works-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .how-it-works-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .how-it-works-left {
+            max-width: 600px;
+        }
+        
+        .how-it-works-label {
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .how-it-works-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .how-it-works-desc {
+            margin-bottom: 25px;
+            color: #666;
+        }
+        
+        .how-it-works-btn {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .how-it-works-btn:hover {
+            background-color: #3a7bc8;
+        }
+        
+        .how-it-works-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Wellness Coaching Section */
+        .wellness-coaching-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .wellness-coaching-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .wellness-coaching-content {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .wellness-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #4a90e2;
+        }
+        
+        .wellness-desc {
+            margin-bottom: 25px;
+            color: #666;
+        }
+        
+        .wellness-btn {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .wellness-btn:hover {
+            background-color: #3a7bc8;
+        }
+        
+        /* Testimonials Section (REPLACED "Our Therapists" Section) */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .testimonials-flex {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 60px;
+        }
+        
+        .testimonials-info {
+            flex: 1;
+            text-align: left;
+            min-width: 320px;
+        }
+        
+        .testimonials-cards {
+            flex: 1;
+            min-width: 320px;
+            max-width: 600px;
+            position: relative;
+            min-height: 220px;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 24px; /* Add space between testimonial cards */
+            overflow: hidden;
+        }
+        
+        .testimonial-card {
+            display: none;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            padding: 32px 24px;
+            min-width: 260px;
+            max-width: 320px;
+            min-height: 180px;
+            margin: 0;
+            position: relative;
+            transition: box-shadow 0.3s;
+            flex: 1 1 0;
+        }
+        
+        .testimonial-card.active {
+            display: block;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 18px;
+            color: #333;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: #4a90e2;
+        }
+        
+        .testimonial-arrows {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .testimonial-arrow {
+            background: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .testimonial-arrow:hover {
+            background: #3a7bc8;
+        }
+
+        @media (max-width: 992px) {
+            .testimonials-flex {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+            .testimonials-info {
+                text-align: center;
+            }
+            .testimonials-cards {
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .logo {
+                position: static;
+                transform: none;
+                margin: 0 auto;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+            }
+            
+            .social-links {
+                margin-left: auto;
+            }
+            
+            .testimonials-flex {
+                flex-direction: column;
+            }
+            
+            .testimonial-card {
+                position: relative;
+                transform: none;
+                width: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        /* Resources Section (NEW) */
+        .resources-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .resources-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .resources-label {
+            display: block;
+            color: #4a90e2;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .resources-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 18px;
+        }
+        
+        .resources_desc {
+            font-size: 18px;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Community Section (NEW) */
+        .community-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .community-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .community-content {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .community-label {
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .community-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #4a90e2;
+        }
+        
+        .community-desc {
+            margin-bottom: 25px;
+            color: #666;
+        }
+        
+        .community-btn {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .community-btn:hover {
+            background-color: #3a7bc8;
+        }
+        
+        .community-image {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .community-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* FAQ Section (UPDATED LAYOUT) */
+        .faq-flex {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 60px;
+        }
+        
+        .faq-left {
+            flex: 1;
+        }
+        
+        .faq-right {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .faq-topic {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #4a90e2;
+            line-height: 1.2;
+        }
+        
+        .faq-desc {
+            margin-bottom: 25px;
+            color: #666;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: 0;
+        }
+        
+        .faq-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-left: auto;
+            margin-right: 0;
+        }
+        
+        @media (max-width: 992px) {
+            .faq-flex {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+            .faq-right {
+                text-align: center;
+            }
+            .faq-img {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        /* Rounded Contact Section */
+        .contact-rounded {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            background: #f9f9f9;
+            padding: 40px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .contact-detail i {
+            font-size: 20px;
+            line-height: 1;
+            color: #4a90e2;
+        }
+
+        .contact-detail h4 {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .contact-detail p {
+            margin: 0;
+            color: #666;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background-color: #3a7bc8;
+            transform: translateY(-3px);
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Centered Logo & Social Media -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#therapists">Therapists</a></li>
+                </ul>
+                
+        
+                    <a href="#home" class="home-btn"><strong>Brainwave Oasis Counseling</strong></a>
+            
+                
+                <ul class="nav-links">
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                
+                <a href="#contact" class="cta-btn">Get Support</a>
+                
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Find Support, Guidance, and Balance</h1>
+            <p>We're Here to Support You. Whether you have questions, need help getting started, or want to learn more — reach out anytime.</p>
+            <div class="hero-btns">
+                <a href="#therapists" class="btn">Find a Therapist</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="how-it-works-section">
+        <div class="container how-it-works-flex">
+            <div class="how-it-works-left">
+                <span class="how-it-works-label">How it works</span>
+                <h2 class="how-it-works-title">
+                    We Help You<br>
+                    Prioritize Your<br>
+                    Mental Health
+                </h2>
+                <p class="how-it-works-desc">
+                    Browse therapists, book a session, and<br>
+                    start your healing journey with trusted<br>
+                    professionals.
+                </p>
+                <a href="#therapists" class="btn how-it-works-btn">Find a Therapist</a>
+            </div>
+            <div class="how-it-works-right">
+                <img src="two-doctors-visiting-unconscious-patient-hospital-39947084 (1).webp" alt="Mental Health Support" class="how-it-works-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url(One\ on\ One\ Therapy.jpeg);"></div>
+                    <div class="service-content">
+                        <h3>One-on-One Therapy</h3>
+                        <p>Virtual and in-person therapy sessions with licensed professionals tailored to your specific needs and goals.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url(Home\ Page.jpg);"></div>
+                    <div class="service-content">
+                        <h3>Mindfulness & Meditation</h3>
+                        <p>Guided meditation sessions and stress management techniques to help you find peace and clarity.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('two-doctors-visiting-unconscious-patient-hospital-39947084\ \(1\).webp');"></div>
+                    <div class="service-content">
+                        <h3>Wellness Coaching</h3>
+                        <p>Personalized guidance to help you build healthier habits, manage stress, and achieve balance in all areas of life.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Coaching Section -->
+    <section class="wellness-coaching-section">
+        <div class="container wellness-coaching-flex">
+            <div class="wellness-coaching-content">
+                <h2 class="wellness-title">Wellness Coaching</h2>
+                <p class="wellness-desc">
+                    Personalized guidance to help you build healthier habits,<br>
+                    manage stress, and achieve balance in all areas of your life.<br>
+                    Our wellness coaches support you in creating sustainable<br>
+                    routines for mental, emotional, and physical well-being.
+                </p>
+                <a href="#" class="btn wellness-btn">Learn More</a>
+            </div>
+            <div class="wellness-coaching-image">
+                <img src="Portrait 02.webp" alt="Wellness Coaching" class="wellness-img">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container testimonials-flex">
+            <!-- Right: Heading and Description -->
+            <div class="testimonials-info">
+                <span class="testimonials-label">testimonials</span>
+                <h2 class="testimonials-title">What Our Clients Are Saying</h2>
+                <p class="testimonials-desc">
+                    Positive experiences from users who have<br>
+                    benefited from therapy or wellness<br>
+                    programs.
+                </p>
+                <div class="testimonial-arrows">
+                    <button class="testimonial-arrow left-arrow" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-arrow right-arrow" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Left: Testimonial Cards with Navigation -->
+            <div class="testimonials-cards">
+                <div class="testimonial-card active">
+                    <p class="testimonial-text">
+                        "Solus made it so easy to find the right therapist for me. The sessions have truly transformed my mindset, and I feel more in control of my emotions than ever before!"
+                    </p>
+                    <div class="testimonial-author">— Anna R., 32</div>
+                </div>
+                <div class="testimonial-card active">
+                    <p class="testimonial-text">
+                        "I was struggling with anxiety, but the mindfulness program from Solus has helped me find balance. I finally feel comfortable prioritizing my mental well-being."
+                    </p>
+                    <div class="testimonial-author">— Mark S., 41</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "The wellness coaching changed my life. I've developed healthier habits and learned to manage stress in ways I never thought possible."
+                    </p>
+                    <div class="testimonial-author">— Priya K., 28</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "My therapist was patient and understanding. I felt heard and supported every step of the way."
+                    </p>
+                    <div class="testimonial-author">— James T., 37</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "The resources and workshops offered have been invaluable for my personal growth and mental health."
+                    </p>
+                    <div class="testimonial-author">— Linda M., 29</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Booking a session was simple, and the support team was always available to answer my questions."
+                    </p>
+                    <div class="testimonial-author">— Samuel O., 45</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+            <div class="partners-slider">
+                <div class="partners-track">
+                    <div class="partner-logo"><img src="Balance Foundation.png" alt="Balance Foundation"></div>
+                    <div class="partner-logo"><img src="Connected Pathways Network.jpg" alt="Connected Pathways"></div>
+                    <div class="partner-logo"><img src="Healing Center.png" alt="Healing Center"></div>
+                    <div class="partner-logo"><img src="Healing Center.webp" alt="Healing Center"></div>
+                    <div class="partner-logo"><img src="Health Organization.webp" alt="Health Organization"></div>
+                    <div class="partner-logo"><img src="Mindful Foundation.png" alt="Mindful Foundation"></div>
+                    <div class="partner-logo"><img src="Balance Foundation.png" alt="Balance Foundation"></div>
+                    <div class="partner-logo"><img src="Connected Pathways Network.jpg" alt="Connected Pathways Network"></div>
+                    <div class="partner-logo"><img src="Healing Center.png" alt="Healing Center"></div>
+                    <div class="partner-logo"><img src="Healing Center.webp" alt="Healing Center"></div>
+                    <div class="partner-logo"><img src="Mindful Foundation.png" alt="Mindful Foundation"></div>
+                    <div class="partner-logo"><img src="Health Organization.webp" alt="Health Organization"></div>
+                    
+                    <div class="partner-logo"><img src="Balance Foundation.png" alt="Balance Foundation"></div>
+                    <div class="partner-logo"><img src="Mindful Foundation.png" alt="Mindful Foundation"></div>
+                    <div class="partner-logo"><img src="Healing Center.png" alt="Healing Center"></div>
+                    <div class="partner-logo"><img src="Connected Pathways Network.jpg" alt="Connected Pathways Network"></div>
+                    <div class="partner-logo"><img src="Mindful Foundation.png" alt="Mindful Foundation"></div>
+                    <div class="partner-logo"><img src="Connected Pathways Network.jpg" alt="Connected Pathways Network"></div>
+                    <div class="partner-logo"><img src="Health Organization.webp" alt="Health Organization"></div>
+                    <div class="partner-logo"><img src="Healing Center.webp" alt="Healing Center"></div>
+                    <div class="partner-logo"><img src="Connected Pathways Network.jpg" alt="Connected Pathways Network"></div>
+                    <div class="partner-logo"><img src="Balance Foundation.png" alt="Balance Foundation"></div>
+                    <div class="partner-logo"><img src="Health Organization.webp" alt="Health Organization"></div>
+                    <div class="partner-logo"><img src="Mindful Foundation.png" alt="Mindful Foundation"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <div class="resources-header" style="text-align:center; margin-bottom: 40px;">
+                <span class="resources-label" style="display:block; color:#4a90e2; font-size:15px; font-weight:600; letter-spacing:1px; margin-bottom:10px;">
+                    Explore and Learn
+                </span>
+                <h2 class="resources-title" style="font-size:32px; font-weight:bold; color:#222; margin-bottom:18px;">
+                    Resources for <br>Your Well-being
+                </h2>
+                <p class="resources_desc" style="font-size:18px; color:#555; max-width:600px; margin:0 auto 30px;">
+                    Explore expert insights, self-care guides, <br>
+                    and tools to support your mental health.
+                </p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('mechanism-to-coop-with-ptsd-scaled.jpeg');"></div>
+                    <div class="resource-content">
+                        <h3>Expert Insights</h3>
+                        <p>Read articles and advice from licensed therapists and mental health professionals on a variety of topics.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('One\ on\ One\ Therapy.jpeg');"></div>
+                    <div class="resource-content">
+                        <h3>Self-Care Guides</h3>
+                        <p>Discover step-by-step guides and routines to help you manage stress, anxiety, and improve your overall well-being.</p>
+                        <a href="#" class="btn">Explore Guides</a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('Therapy\ 3.webp');"></div>
+                    <div class="resource-content">
+                        <h3>Wellness Tools</h3>
+                        <p>Access worksheets, checklists, and digital tools designed to support your mental health journey.</p>
+                        <a href="#" class="btn">View Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Community Section -->
+    <section class="community-section">
+        <div class="container community-rounded community-flex">
+            <div class="community-content">
+                <span class="community-label">Community</span>
+                <h2 class="community-title">You Are Not Alone</h2>
+                <p class="community-desc">
+                    Connect with others who understand your journey. Our supportive community offers a safe space to share experiences, ask questions, and find encouragement. Whether you're seeking advice, inspiration, or simply a listening ear, you'll find a welcoming group ready to support you every step of the way.
+                </p>
+                <a href="#" class="btn community-btn">Join Our Community</a>
+            </div>
+            <div class="community-image">
+                <img src="mechanism-to-coop-with-ptsd-scaled.jpeg" alt="Community Support" class="community-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container faq-flex">
+            <!-- Left: FAQ Accordion -->
+            <div class="faq-right">
+                                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I book a therapy session?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can book a therapy session directly through our website by browsing our therapists and selecting an available time slot that works for you. Alternatively, you can call our support line for assistance with booking.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Are online sessions available?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer both in-person and online therapy sessions. Many of our clients prefer the convenience of online sessions, which are conducted through our secure video platform.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What's the difference between therapy and coaching?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Therapy typically focuses on diagnosing and treating mental health conditions, while coaching is more focused on personal development and achieving specific goals. Our professionals can help you determine which approach is right for your needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I switch therapists if I don't feel the right connection?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. Finding the right therapist is crucial for effective treatment. We encourage you to try different therapists until you find someone you feel comfortable with, and our team can help guide you in this process.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do I need a subscription to access services?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No subscription is required. You can book individual sessions as needed, though we do offer packages for those who want to commit to ongoing care at a discounted rate.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is my information and session history kept confidential?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, confidentiality is our top priority. All your information and session details are protected under strict privacy laws and our secure systems. We never share your information without your explicit consent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right: FAQ Info and Image -->
+            <div class="faq-left">
+                <h2 class="faq-topic">Frequently<br>Asked Questions</h2>
+                <p class="faq-body">
+            Find answers to common questions about 
+            our services, therapy, and mental well-being.
+                </p>
+                <img src="therapy Tech.jpg" alt="FAQ Illustration" class="faq-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container contact-rounded">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>support@brainwaveoasiscounseling.com</p>
+                                <p>We typically respond within 12 hours.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(+254) (0) 718 000 000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Outering Road Exit 12, Lagoon Plaza, -00618</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Brainwave Oasis Counseling</h3>
+                    <p>Your path to mental well-being and emotional balance through professional support and resources.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#therapists">Therapists</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">One-on-One Therapy</a></li>
+                        <li><a href="#">Mindfulness & Meditation</a></li>
+                        <li><a href="#">Wellness Coaching</a></li>
+                        <li><a href="#">Group Sessions</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Brainwave Oasis Counseling. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelectorAll('.nav-links');
+            navLinks.forEach(link => {
+                link.style.display = link.style.display === 'flex' ? 'none' : 'flex';
+            });
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.classList.contains('active');
+                
+                // Close all answers first
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('active');
+                });
+                
+                // Toggle icons
+                document.querySelectorAll('.faq-question i').forEach(icon => {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                });
+                
+                // Open current if it was closed
+                if (!isOpen) {
+                    answer.classList.add('active');
+                    question.querySelector('i').classList.remove('fa-chevron-down');
+                    question.querySelector('i').classList.add('fa-chevron-up');
+                }
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 992) {
+                        document.querySelectorAll('.nav-links').forEach(link => {
+                            link.style.display = 'none';
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Testimonial Slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const totalTestimonials = testimonials.length;
+
+        function showTestimonials(start) {
+            testimonials.forEach((card, i) => {
+                card.classList.remove('active');
+                if (i === start || i === (start + 1) % totalTestimonials) {
+                    card.classList.add('active');
+                }
+            });
+        }
+
+        // Initial display
+        showTestimonials(currentTestimonial);
+
+        document.querySelector('.right-arrow').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 2) % totalTestimonials;
+            showTestimonials(currentTestimonial);
+        });
+
+        document.querySelector('.left-arrow').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 2 + totalTestimonials) % totalTestimonials;
+            showTestimonials(currentTestimonial);
+        });
+    </script>
+</body>
+</html>
